@@ -1,0 +1,190 @@
+// Mixin for easy media queries
+// The code is in _mq.scss and is from https://github.com/guardian/sass-mq
+// How to use see below:
+// @include mq($from: tablet) { SCSS here };
+// @include mq($until: tablet) { SCSS here };
+
+// Mixin for micro clearfix
+// @include microclearfix;
+@mixin microclearfix {
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+// Markup free clearing
+// http://www.stubbornella.org/content/2012/05/02/cross-browser-debugging-css/
+@mixin cf {
+  overflow: hidden;   // New formatting context in better browsers
+  *overflow: visible; // Protect IE7 and older from the overflow property
+  *zoom: 1;           // Give IE hasLayout, a new formatting context equivalent
+}
+
+// Function to convert px to em values on the fly
+// http://thesassway.com/intermediate/responsive-web-design-part-1
+@function em($target-px, $context) {
+  @return ($target-px / $context) * 1em;
+}
+
+// Mixin for basic CSS triangles
+// @include triangle(up, #000, 50px)
+
+@mixin triangle($direction:up, $color:#000, $size:100px) {
+  @if($direction == up) {
+    border-color: transparent transparent $color;
+    border-style: solid;
+    border-width: 0 $size $size;
+    height: 0;
+    width: 0;
+  }
+
+  @if($direction == down) {
+    border-color: $color transparent transparent;
+    border-style: solid;
+    border-width: $size;
+    height: 0;
+    width: 0;
+  }
+
+  @if($direction == left) {
+    border-color: transparent $color transparent transparent;
+    border-style: solid;
+    border-width: $size $size $size 0;
+    height: 0;
+    width: 0;
+  }
+
+  @if($direction == right) {
+    border-color: transparent transparent transparent $color;
+    border-style: solid;
+    border-width: $size 0 $size $size;
+    height: 0;
+    width: 0;
+  }
+}
+
+// @font-face mixin
+// Bulletproof font-face via Font Squirrel
+// @include fontface('family', 'webfonts/', 'myfontname','normal','normal');
+
+@mixin fontface($font-family, $font-url, $font-name, $font-style, $font-weight) {
+  @font-face {
+    font: {
+      family: $font-family;
+      style: $font-style;
+      weight: $font-weight;
+    }
+    src: url($font-url + '/' + $font-name + '.eot');
+    src: url($font-url + '/' + $font-name + '.eot#iefix') format('embedded-opentype'),
+        url($font-url + '/' + $font-name + '.woff2') format('woff2'),
+        url($font-url + '/' + $font-name + '.woff') format('woff'),
+        url($font-url + '/' + $font-name + '.ttf')  format('truetype');
+        //url($font-url + '/' + $font-name + '.svg#' + $font-name) format('svg');
+  }
+}
+
+// A nice clean list please
+@mixin clean-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+// Cross browser opacity
+// @include opacity(0.8)
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity = $opacity-ie); //IE8
+}
+
+// make the words break rather than run over the edge
+@mixin hyphens {
+  //-ms-word-break: break-all;
+
+  // Non standard for webkit - but now works in Firefox from
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+// Make sure the word gets ... rather than being cut of
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//
+// http://css-tricks.com/almanac/properties/w/width/
+// @include intrinsic(width, min-content);
+@mixin intrinsic($property, $value) {
+  @if $value == fit-content or $value == min-content or $value == max-content {
+    #{$property}: -webkit-#{$value};
+    #{$property}: -moz-#{$value};
+    #{$property}: $value;
+  }
+
+  @else if $value == fill-available or $value == available {
+    #{$property}: -webkit-fill-available;
+    #{$property}: -moz-available;
+    #{$property}: fill-available;
+  } @else {
+    #{$property}: $value;
+  }
+}
+
+// Better font-rendering on OSX
+// http://maximilianhoffmann.com/posts/better-font-rendering-on-osx
+// Usage @include font-smoothing(on) or @include font-smoothing(off)
+@mixin font-smoothing($value: on) {
+  @if $value == on {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  } @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
+// Icons by charter
+@mixin icon($char) {
+  font-family: $icon;
+  content: $char;
+  @include font-smoothing(on);
+}
+
+@mixin icon-before($char) {
+  &:before {
+    @include font-smoothing(on);
+    speak: none;
+    margin-right: 0.2em;
+    font-family: $icon;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    content: $char;
+  }
+}
+
+@mixin icon-after($char) {
+  &:after {
+    @include font-smoothing(on);
+    speak: none;
+    margin-left: .3em;
+    font-family: $icon;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    content: $char;
+  }
+}

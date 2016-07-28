@@ -1,0 +1,143 @@
+// Infoboxes used in content fields
+.view-footer {
+  .content--infobox {
+    margin: $padding-standard 0;
+    background-color: $bg-infobox;
+  }
+}
+
+.infobox--grey {
+  background-color: $bg-infobox-grey;
+
+  .text--subtitle {
+    text-align: center;
+  }
+
+  .layout--horizontalbox__inner {
+    > h3 {
+      text-align: center;
+      margin-top: em(13, 22);
+    }
+
+    &:before {
+      display: block;
+      font-size: 30px;
+      line-height: 36px;
+      text-align: center;
+    }
+  }
+}
+
+.infobox--meta,
+.infobox--attention {
+  padding: $padding-infobox $padding-infobox $padding-standard;
+  color: $text-invers;
+
+  h2 {
+    color: inherit;
+  }
+
+  h3,
+  h4,
+  h5 {
+    color: inherit;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.infobox--meta {
+  background-color: $bg-infobox-meta;
+}
+
+.infobox--attention {
+  background-color: $bg-infobox-attention;
+  margin-bottom: $padding-standard;
+  font-size: em(19, $fontsize-mobile);
+
+  > h2,
+  > h3 {
+    font-size: em(30, 19);
+  }
+
+  > p {
+    font-family: $headlinelight-font;
+    padding-bottom: em(4, 19);
+    margin-bottom: em(4, 19);
+
+    > strong {
+      font-family: $headline-empasis-font;
+    }
+  }
+}
+
+.infobox--customerservice {
+  background-color: $bg-infobox-grey;
+
+  .content--style_wide-inner {
+    background-repeat: no-repeat;
+  }
+}
+
+@include mq($until: mobile) {
+  .content--main {
+    > form {
+      .infobox--grey {
+        margin-left: -1 * $padding-standard;
+        margin-right: -1 * $padding-standard;
+      }
+    }
+  }
+}
+
+@include mq($until: tablet) {
+  .view-footer .content--infobox,
+  .infobox--grey {
+    padding: $padding-standard $padding-standard / 2;
+  }
+
+  .infobox--customerservice {
+    .content--style_wide-inner {
+      background-position: right top;
+      background-size: auto 100%;
+    }
+
+    .content--block-main {
+      padding: $padding-standard 50% $padding-standard $padding-standard;
+    }
+  }
+}
+
+@include mq($from: tablet) {
+  .view-footer .content--infobox,
+  .infobox--grey {
+    padding: 2 * $padding-standard;
+  }
+
+  .infobox--customerservice {
+    .content--style_wide-inner {
+      background-position: left bottom;
+      min-height: 590px;
+    }
+
+    .content--block-main {
+      padding: 100px;
+      padding-left: 540px / $page-width * 100%;
+
+      > h2 {
+        font-size: em(50, 17);
+        line-height: em(70, 50);
+      }
+    }
+
+    .icon--phone_schema {
+      font-size: em(40, 17);
+    }
+
+    .content--prose {
+      > h3 {
+        font-size: em(30, 17);
+      }
+    }
+  }
+}

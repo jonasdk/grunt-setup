@@ -1,0 +1,37 @@
+// Theme Name: FDM Vejhjælp
+// Theme URI: http://vejhjaelp.fdm.dk
+// Description: FDM theme developed in 2015
+// Author: Jonas Krat, FDM
+// Author URI: http://www.fdm.dk
+// Version: 1.0
+// Why inline css http://gomakethings.com/inlining-critical-css-for-better-web-performance/
+
+// Reset, Variables, Mixins, Etc
+// DO NOT EDIT ORDER OF FILES
+@import 'base/mixins';
+@import 'base/mq';
+@import 'base/colors';
+@import 'base/variables';
+
+// Globals
+@import 'base/normalize_inline';
+@import 'base/fonts';
+
+// The layout
+@import 'layout/typography';
+@import 'layout/layout_inline';
+@import 'layout/page_inline';
+@import 'layout/content_inline';
+
+// Site Styles
+@import 'componets/navigation_inline';
+@import 'componets/burger_inline';
+@import 'componets/search_inline';
+@import 'componets/tab_inline';
+@import 'componets/picture_inline';
+@import 'componets/infobox_inline';
+@import 'componets/splash_inline';
+@import 'componets/formelements_inline';
+@import 'componets/cookie_inline';
+
+// Helper Classes, Print, Etc

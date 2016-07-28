@@ -1,0 +1,36 @@
+// Search
+
+.search--top-toggle {
+  @include icon-before('\e818');
+  position: relative;
+  max-width: $page-width;
+  margin: 0 auto;
+  color: $topnav-invers;
+
+  @include mq($until: tablet) {
+    &:before {
+      top: -31px;
+      left: 10px;
+    }
+  }
+
+  @include mq($from: tablet) {
+    &:before {
+      top: 11px;
+      right: 0;
+    }
+  }
+
+  &:before {
+    transform: rotate(90deg);
+    position: absolute;
+    z-index: $above-menu;
+    width: em(30, 25);
+    height: em(30, 25);
+    padding: 0;
+    cursor: pointer;
+    font-size: em(25, 18);
+    line-height: em(25, 25);
+    margin: 0;
+  }
+}

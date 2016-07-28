@@ -1,0 +1,273 @@
+// Typography in here please
+// but just the basics
+
+// GENERAL
+body {
+  @include font-smoothing;
+  text-rendering: optimizelegibility;
+
+  @include mq($until: tablet) {
+    font-size: em($fontsize-mobile, 16);
+    line-height: em(25, $fontsize-mobile);
+  }
+
+  @include mq($from: tablet) {
+    font-size: em($fontsize-desktop, 16);
+    line-height: em(25, $fontsize-desktop);
+  }
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+
+  &.button {
+    color: $text-invers;
+  }
+}
+
+.content--prose,
+.content--display_view {
+  a:not(.button) {
+    font-weight: bold;
+    color: $link-color;
+
+    &:link,
+    &:visited {
+      color: $link-color;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Remove text-shadow in selection highlight: h5bp.com/i
+// These selection rule sets have to be separate.
+// Customize the background color to match your design.
+
+::selection {
+  background: $selection-color;
+  text-shadow: none;
+}
+
+// HEADINGS / TYPOGRAPHY
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @include font-smoothing(on);
+
+  font-feature-settings: 'kern' 1;
+  margin: 0 0 0.2em;
+  padding: 0 0 0.2em;
+  line-height: 1.2em;
+  font-family: $headline-font;
+  font-weight: normal;
+  color: $text-header;
+
+  > a {
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  &.title--section {
+    margin: em(18, 18) 0 0;
+    text-align: center;
+  }
+
+  .footer--content &,
+  .infobox--dark &,
+  .infobox--meta & {
+    color: inherit;
+  }
+}
+
+// Paragraph types
+.content--prose {
+  > p {
+    > em {
+      font-style: normal;
+      font-size: em($fontsize-desktop, 14);
+      line-height: em(24, $fontsize-desktop);
+    }
+
+    > strong {
+      font-weight: bold;
+    }
+  }
+
+  // Want to make sure big headlines don't get cramped by images that floats
+  > h2,
+  > h3 {
+    clear: both;
+  }
+
+  // Blockquote to a nice looking quote when seen in prose
+  // TODO: missing design
+  blockquote {
+    > p {
+      font-family: $teaser-font;
+      font-size: em(30, 17);
+      line-height: 1.2em;
+      color: $text-highquote;
+
+      &::before {
+        content: '“';
+        margin-right: 0.1em;
+      }
+
+      &::after {
+        content: '”';
+        margin-left: 0.1em;
+      }
+    }
+  }
+}
+
+// Figurecaption
+figcaption {
+  padding: em(4, 14) 0 0;
+  margin-bottom: $space-after-image;
+  text-align: right;
+  font-size: em(14, $fontsize-desktop);
+  line-height: em(15, 14);
+  color: $text-caption;
+}
+
+// Speciale typographic elements
+.typo--teaser {
+  font-family: $teaser-font;
+  font-size: em(23, $fontsize-desktop);
+  color: $text-header;
+
+  > p {
+    margin-top: em(8, 22);
+    margin-bottom: em(8, 22);
+  }
+}
+
+// Where mobile and bigger screens differ
+@include mq($until: tablet) {
+  h1 {
+    font-size: em(30, $fontsize-mobile);
+    line-height: em(36, 30);
+    margin-bottom: em(10, 30);
+
+    &.title--section {
+      margin: em(18, 18) $padding-standard 0;
+    }
+  }
+
+  h2 {
+    font-size: em(30, $fontsize-mobile);
+    line-height: em(36, 30);
+  }
+
+  h3 {
+    font-size: em(20, $fontsize-mobile);
+    line-height: em(40, 20);
+  }
+
+  h4 {
+    font-size: em(18, $fontsize-mobile);
+  }
+
+  h5 {
+    font-size: em(18, $fontsize-mobile);
+  }
+
+  // Paragraph types
+  p {
+    margin: 0 0 em(8, $fontsize-mobile);
+    padding: 0 0 em(8, $fontsize-mobile);
+  }
+
+  blockquote {
+    margin: em(20, $fontsize-mobile);
+  }
+
+  .typo--teaser {
+    line-height: em(24, 23);
+  }
+
+  .content--row {
+    .content--prose {
+      > p {
+        font-size: em(18, $fontsize-mobile);
+        line-height: em(24, 18);
+      }
+    }
+  }
+}
+
+// for non mobile only
+@include mq($from: tablet) {
+  h1 {
+    font-size: em(50, $fontsize-desktop);
+    line-height: em(60, 50);
+    margin-bottom: em(10, 50);
+    padding-bottom: 0;
+  }
+
+  h2 {
+    font-size: em(30, $fontsize-desktop);
+    line-height: em(36, 30);
+  }
+
+  h3 {
+    font-size: em(22, $fontsize-desktop);
+    line-height: em(26, 22);
+  }
+
+  h4 {
+    font-size: em(18, $fontsize-desktop);
+  }
+
+  h5 {
+    font-size: em(14, $fontsize-desktop);
+  }
+
+  p {
+    margin: 0 0 em(10, $fontsize-desktop);
+    padding: 0 0 em(10, $fontsize-desktop);
+  }
+
+  blockquote {
+    margin: em(10, $fontsize-desktop) em(40, $fontsize-desktop);
+
+    &.layout--aleft {
+      float: left;
+      width: 240px / $page-textreader-width * 100%;
+      margin: em(10, $fontsize-desktop) em(40, $fontsize-desktop) em(20, $fontsize-desktop) em(10, $fontsize-desktop);
+    }
+
+    &.layout--aright {
+      float: right;
+      width: 240px / $page-textreader-width * 100%;
+      margin: em(10, $fontsize-desktop) em(10, $fontsize-desktop) em(20, $fontsize-desktop) em(40, $fontsize-desktop);
+    }
+
+    > p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .typo--teaser {
+    line-height: em(27, 23);
+  }
+}

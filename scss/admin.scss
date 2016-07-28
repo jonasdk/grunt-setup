@@ -1,0 +1,39 @@
+//From classy tabs
+
+// Visual styles for tabs.
+div.tabs {
+  margin: 1em 0;
+}
+
+ul.tabs {
+  list-style: none;
+  margin: 0 0 0.5em;
+  padding: 0;
+}
+
+.tabs {
+  > li {
+    display: inline-block;
+    margin-right: 0.3em; /* LTR */
+  }
+
+  a {
+    display: block;
+    padding: 0.2em 1em;
+    text-decoration: none;
+
+    &.is-active {
+      background-color: #eee;
+    }
+
+    &:focus,
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+}
+
+// Styles for getting sevice menu back inplace
+.nav--service-menu.contextual-region {
+  position: absolute;
+}

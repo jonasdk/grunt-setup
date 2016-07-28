@@ -1,0 +1,26 @@
+// And implementation of the Drupal ajax modules css - the basic
+.ajax-progress {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 12px;
+  color: $text-sosumi;
+
+  .throbber {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url('../gfx/throbber.gif') no-repeat 0 0;
+    margin-right: 3px;
+  }
+
+  .message {
+    display: inline-block;
+  }
+
+  .form--type-number & {
+    top: auto;
+    bottom: 10px;
+    right: 2em;
+  }
+}

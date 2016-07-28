@@ -1,0 +1,64 @@
+// Splashes, banners and other attention calling fancy pancy blings
+
+.splash--star {
+  position: absolute;
+  //background: url('/images/splash-star.svg') 0 0 no-repeat;
+  background-size: cover;
+  font-weight: normal;
+  text-align: center;
+  color: $text-invers;
+
+  > em {
+    display: block;
+    padding-bottom: 2px;
+    font-weight: bold;
+    font-style: normal;
+    line-height: 1.1em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  > strong {
+    display: inline-block;
+    border-top: 1px solid $border-menu;
+    border-bottom: 1px solid $border-menu;
+    font-weight: bold;
+    padding: em(10, 83) 0 em(1, 83);
+    margin-bottom: em(9, 83);
+
+    > span {
+      font-family: $body-font;
+    }
+  }
+
+  @include mq($until: tablet) {
+    height: 150px;
+    width: 150px;
+    padding: 25px 10px 0;
+
+    > em {
+      font-size: em(15, $fontsize-mobile);
+    }
+
+    > strong {
+      font-size: em(35, $fontsize-mobile);
+      line-height: em(40, 35);
+    }
+  }
+
+  @include mq($from: tablet) {
+    height: 240px;
+    width: 240px;
+    padding: 48px 20px 0;
+
+    > em {
+      font-size: em(20, $fontsize-desktop);
+      line-height: em(20, 20);
+    }
+
+    > strong {
+      font-size: em(52, $fontsize-desktop);
+      line-height: em(60, 52);
+    }
+  }
+}

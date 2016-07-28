@@ -1,0 +1,59 @@
+// Just icons here
+
+// Icon before mostly used when inline with the text
+.icon--before {
+  &:before {
+    padding-right: 0.4em;
+  }
+}
+
+.icon--phone {
+  @include icon-before('\e80a');
+}
+
+.icon--phone_schema {
+  > div {
+    @include icon-before('\e80a');
+  }
+}
+
+.icon--facebook {
+  @include icon-before('\e802');
+}
+
+.icon--contact {
+  @include icon-before('\e807');
+}
+
+.icon--twitter {
+  @include icon-before('\e801');
+}
+
+.icon--instagram {
+  @include icon-before('\e81c');
+}
+
+// Icons used from a selection within a node, special cases apply
+.icons--type_thumbsup {
+  @include icon-before('\e819');
+}
+
+.icons--type_checkbox-checked {
+  @include icon-before('\e81b');
+}
+
+.icons--type_geotick {
+  @include icon-before('\e81a');
+}
+
+.icons--type_person {
+  @include icon-before('\e80f');
+}
+
+.icons--type_phone {
+  @include icon-before('\e811');
+}
+
+.icons--type_lock {
+  @include icon-before('\e810');
+}

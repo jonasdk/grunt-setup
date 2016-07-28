@@ -1,0 +1,43 @@
+// Meta content and Schema items
+.schema--companyname {
+  padding-bottom: em(8, 18);
+  margin-bottom: em(8, 18);
+}
+
+.schema--postaladdress {
+  padding-bottom: em(8, 18);
+  margin-bottom: em(8, 18);
+}
+
+.schema--street {
+  display: block;
+}
+
+.schema--telephone {
+  padding-bottom: em(8, 18);
+  margin-bottom: em(8, 18);
+  white-space: nowrap;
+}
+
+.schema--phone,
+.schema--electronic-contact {
+  margin: 1em 0;
+}
+
+.schema--openinghours {
+  > time {
+    display: block;
+  }
+}
+
+.schema--electronic-contact {
+  > a {
+    display: block;
+    margin-top: em(8, 17);
+    margin-bottom: em(8, 17);
+  }
+}
+
+.schema--openninghours {}
+.schema--postalcode {}
+.schema--locality {}

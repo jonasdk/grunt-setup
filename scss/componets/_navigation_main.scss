@@ -1,0 +1,36 @@
+// Navigation styles
+.navigation--footer {
+  > a {
+    float: left;
+    width: 50%;
+    padding-right: 2em;
+    margin: 0.5em 0;
+  }
+
+  > ul {
+    @include clean-list;
+
+    > li {
+      height: 2.3em;
+      line-height: 2.3em;
+    }
+  }
+}
+
+@include mq($from: tablet) {
+  .navigation--footer {
+    width: 100%;
+
+    > ul {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      height: 4.6em;
+
+      > li {
+        width: 50%;
+      }
+    }
+  }
+}

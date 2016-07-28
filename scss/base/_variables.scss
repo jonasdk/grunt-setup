@@ -1,0 +1,53 @@
+// Font Variables
+$helveticaneue:       	'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+$geogrotesque:    			'geogrotesque-regular', 'Lucida Grande', 'Lucida Sans', Tahoma, sans-serif;
+$geogrotesque-semibold: 'geogrotesque-semibold', 'Lucida Grande', 'Lucida Sans', Tahoma, sans-serif;
+
+
+$body-font:             $helveticaneue;
+$teaser-font:           $geogrotesque;
+$navigation-font:       $helveticaneue;
+$headlinelight-font:    $geogrotesque;
+$headline-font:         $geogrotesque-semibold;
+$headline-empasis-font: $geogrotesque-semibold;
+$icon:                  'fdm';
+
+// Font size
+$fontsize-desktop:      17;
+$fontsize-tablet:       17;
+$fontsize-mobile:       17;
+
+// Structure
+$page-width: 			       1000px;
+$page-textreader-width:   620px;
+$page-sidebar-width:      280px;
+$page-right-gutter:       100px;
+$page-top-gutter:          35px;
+
+// Paddings
+$padding-pagebottom: 			 75px;
+$padding-alot: 			       30px;
+$padding-infobox:          $padding-alot;
+$padding-standard: 	       20px;
+$padding-small: 		       15px;
+$padding-tiny: 		          5px;
+$space-after-image: $padding-alot;
+
+// z-index
+$below-content: 1;
+$inline-with-content: 2;
+$above-content: 3;
+$menu-top: 4;
+$above-menu: 5;
+
+// Animations vars
+// animation speed
+$animation-speed-slow:  1s;
+$animation-speed:       0.8s;
+$animation-speed-fast:  0.5s;
+
+$animation-style: cubic-bezier(0.65, 0.05, 0.36, 1);
+
+// Other
+
+// Developer

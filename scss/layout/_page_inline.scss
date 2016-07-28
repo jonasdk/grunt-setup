@@ -1,0 +1,56 @@
+// Structure
+
+// Logo
+.site--logo {
+  font-family: $icon;
+  line-height: 1em;
+
+  > em {
+    display: inline-block;
+    width: em(20, 9);
+    padding: em(10, 9) 0 em(4, 9);
+    margin-right: em(3, 9);
+    background: $blue-logo;
+    border-radius: em(2, 9);
+    font-style: normal;
+    text-align: center;
+  }
+}
+
+a {
+  &.site--logo {
+    color: $text-invers;
+  }
+}
+
+// Hero
+.hero {
+  position: relative;
+  width: 100%;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center top;
+
+  .content--main {
+    color: $text-invers;
+  }
+}
+
+.content--cta {
+  margin: 25px 0 10px;
+  text-align: center;
+}
+
+@include mq($until: tablet) {
+  .site--logo {
+    font-size: em(10, $fontsize-mobile);
+    display: inline-block;
+  }
+}
+
+@include mq($from: tablet) {
+  .site--logo {
+    font-size: em(14, $fontsize-mobile);
+    display: block;
+  }
+}

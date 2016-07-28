@@ -1,0 +1,16 @@
+// Font Face
+@include fontface('geogrotesque-regular', '/themes/custom/fdm_subsite/webfonts', '300D95_0_0', normal, normal);
+@include fontface('geogrotesque-semibold', '/themes/custom/fdm_subsite/webfonts', '300F99_0_0', normal, bold);
+
+// Icons
+@font-face {
+  font-family: 'fdm';
+  src: url('/themes/custom/fdm_subsite/webfonts/fdm.eot?50231493');
+  src: url('/themes/custom/fdm_subsite/webfonts/fdm.eot?50231493#iefix') format('embedded-opentype'),
+    url('/themes/custom/fdm_subsite/webfonts/fdm.woff2?50231493') format('woff2'),
+    url('/themes/custom/fdm_subsite/webfonts/fdm.woff?50231493') format('woff'),
+    url('/themes/custom/fdm_subsite/webfonts/fdm.ttf?50231493') format('truetype'),
+    url('/themes/custom/fdm_subsite/webfonts/fdm.svg?50231493#fdm') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

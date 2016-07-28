@@ -1,0 +1,40 @@
+// Splashes, banners and other attention calling fancy pancy blings
+// Further down on the page
+
+.splash--box {
+  padding: 0.8em 20px;
+  background-color: $splash-bg;
+  color: $text-invers;
+  text-align: center;
+  line-height: 1em;
+
+  > em {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 0.5em;
+  }
+
+  > strong {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: bold;
+    line-height: inherit;
+
+    > span {
+      font-family: $body-font;
+    }
+  }
+}
+
+.splash--caption {
+  width: 100%;
+  margin-bottom: 1em;
+
+  @include mq($from: tablet) {
+    position: absolute;
+    top: -2.6em;
+    z-index: $above-content;
+  }
+}

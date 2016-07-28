@@ -1,0 +1,70 @@
+// Pictures style base and for the top image rest goes elsewhere
+
+.content--prose {
+  figure {
+    display: table;
+
+    > figcaption {
+      display: table-caption;
+      caption-side: bottom;
+      max-width: none;
+    }
+
+    > img {
+      display: block;
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      border: 0;
+    }
+  }
+}
+
+.image--featurecircle {
+  // Top image - mobile 640x640
+  padding-bottom: 640 / 640 * 100%;
+  clear: both;
+  margin: 0.5em 0;
+}
+
+.picture--field-main-image,
+.picture--main-image {
+  > picture {
+    // Style main
+    padding-bottom: 400 / 750 * 100%;
+  }
+}
+
+.picture--field-hovedbillede {
+  margin-bottom: $space-after-image;
+}
+
+.picture--field-topimage-flat {
+	> picture {
+		@include mq($until: mobile) {
+      padding-bottom: 150 / 320 * 100%;
+    }
+
+    @include mq($from: mobile) {
+      padding-bottom: 240 / 1280 * 100%;
+    }
+	}
+}
+
+@include mq($from: tablet) {
+  .content--prose {
+    figure {
+      &.align-left {
+        width: 375 / 620 * 100%;
+        margin: 0 1em 0 0;
+        float: left;
+      }
+
+      &.align-right {
+        width: 375 / 620 * 100%;
+        margin: 0 -1 * $page-right-gutter 0 1em;
+        float: right;
+      }
+    }
+  }
+}

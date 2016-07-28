@@ -1,0 +1,18 @@
+// Products and prices
+
+.prices {
+  > span {
+    float: right;
+  }
+}
+
+.price--normal {
+	& + .price--member {
+		margin-bottom: $padding-tiny;
+		padding-bottom: $padding-tiny;
+	}
+}
+
+.price--member {
+  font-weight: bold;
+}

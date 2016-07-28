@@ -1,0 +1,325 @@
+.form--item {
+  position: relative;
+  font-size: em(16, 16);
+  line-height: em(22, 16);
+  margin-bottom: em(20, 16);
+
+  .form--radios &,
+  .form--checkboxes & {
+    margin-bottom: em(10, 16);
+  }
+}
+
+.form--description {
+  font-size: em(14, 16);
+  margin-bottom: em(10, 14);
+}
+
+label,
+legend > span {
+  &.form-required {
+    &::before {
+      content: '* ';
+      color: $form-required;
+    }
+  }
+}
+
+.form--actionbar,
+.form-actions {
+  text-align: right;
+  padding: $padding-small / 3 0;
+}
+
+.form--type-textfield,
+.form--type-email,
+.form--type-tel,
+.form--type-password,
+.form--type-number {
+  position: relative;
+  width: 100%;
+  padding: 0 0 0 2px;
+
+  input {
+    border: 2px solid $border-form;
+    width: 100%;
+    padding: 17px $padding-small 3px;
+    appearance: none;
+    outline: none;
+    vertical-align: baseline;
+    font-size: em(17, 16);
+    line-height: em(26, 17);
+    font-weight: bold;
+  }
+
+  input,
+  label {
+    transition: 0.2s ease-in-out;
+  }
+
+  label {
+    position: absolute;
+    left: $padding-small;
+    top: 8px;
+    right: 0;
+    z-index: 1;
+    min-height: 1.5em;
+    font-size: em(12, 16);
+    font-weight: normal;
+    line-height: 1em;
+
+    .js & {
+      top: 16px;
+      font-size: em(17, 16);
+      font-weight: bold;
+    }
+  }
+/* TODO: JKR To be worked on
+  input:invalid {
+    background: lime;
+  }
+
+  input:invalid + label,
+  .js input:invalid + label {
+    top: 8px;
+    font-size: em(12, 16);
+    font-weight: normal;
+    background: hotpink;
+  }
+
+  input:invalid + label::after {
+    content: ' ⨉';
+  }
+
+  input:valid + label::after {
+    content: ' ✓';
+  }
+*/
+  @include mq($until: mobile) {
+    input {
+      padding-left: $padding-small - 5;
+      padding-right: $padding-small - 5;
+    }
+
+    label {
+      left: $padding-small - 5;
+    }
+  }
+}
+
+// focus and prefilled - only set by javascript and need that level to be seen
+.js .form--focus,
+.js .form--filled {
+  label {
+    top: 8px;
+    font-size: em(12, 16);
+    font-weight: normal;
+  }
+}
+
+.form--type-radio,
+.form--type-checkbox {
+  padding-left: 0.2em;
+}
+
+.form--type-range {
+  > label {
+    display: block;
+    font-weight: bold;
+  }
+
+  .form-range {
+    width: 75%;
+    margin-right: 5%;
+  }
+
+  > output {
+    display: inline-block;
+    width: 20%;
+    height: 38px;
+    border: 2px solid $border-form;
+    padding: 5px;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+.form--type-select {
+  label {
+    display: block;
+    font-weight: bold;
+  }
+
+  .form-select {
+    margin-top: 7px;
+
+    @include mq($from: mobile) {
+      height: 51px;
+      border: 2px solid $border-form;
+      padding-left: 10px;
+      font-weight: bold;
+      background: url('../gfx/caret.png') no-repeat;
+      background-position: 97% 50%;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+    }
+  }
+}
+
+.form-select {
+  width: 100%;
+  height: 30px;
+
+  > option {
+    padding: 5px 10px;
+  }
+}
+
+// Boxes
+.form--highlighed-box,
+.form--grey-box {
+  overflow: hidden;
+  margin-bottom: $padding-standard;
+
+  @include mq($from: mobile) {
+    padding: $padding-alot;
+  }
+
+  @include mq($until: mobile) {
+    padding: $padding-small;
+
+    .content--main & {
+      margin-left: -1 * $padding-standard;
+      margin-right: -1 * $padding-standard;
+    }
+  }
+
+  .form-submit {
+    float: right;
+  }
+
+  &.form--box-narrow {
+    padding: 0;
+
+    > div {
+      padding: $padding-small - 5px $padding-small;
+    }
+
+    .form--item {
+      &:nth-last-of-type(1) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.form--highlighed-box {
+  background: $form-highlight;
+  color: $text-invers;
+}
+
+.form--grey-box {
+  background: $bg-infobox-grey;
+}
+
+// Switches
+.form--radio-toggle-switch {
+  border: 2px solid $form-stroke;
+  margin-bottom: 1.25em;
+
+  legend,
+  input {
+    display: none;
+  }
+
+  .form--item {
+    margin: 0;
+  }
+
+  .form--type-radio {
+    float: left;
+    display: inline-block;
+    width: 50%;
+    padding: 0;
+  }
+
+  input {
+    &:checked + label {
+      background-color: $green-success;
+      box-shadow: none;
+      color: $text-invers;
+    }
+  }
+
+  label {
+    float: left;
+    display: inline-block;
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: none;
+    color: $text-color;
+    transition: all 0.1s ease-in-out;
+
+    @include mq($until: tablet) {
+      padding: 10px $padding-small;
+      font-size: em(14, 16);
+      line-height: em(18, 14);
+    }
+
+    @include mq($until: mobile) {
+      padding: 10px $padding-small / 2;
+      min-height: 4em;
+    }
+
+    @include mq($from: tablet) {
+      padding: 14px $padding-small;
+      font-size: em(17, 16);
+      line-height: em(22, 17);
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+// Fieldset styling
+.form--fieldset-legend {
+  font-weight: bold;
+  padding: 3px 0 13px;
+
+  .fieldset--has-description & {
+    padding-bottom: 0;
+  }
+
+  legend & {
+    display: block;
+  }
+}
+
+// Error messages
+.form--message-error {
+  > div {
+    position: relative;
+    padding: $padding-tiny $padding-small;
+    margin-top: -13px;
+    margin-bottom: $padding-small;
+    border: 1px solid $form-error;
+    border-radius: 5px;
+    background: $form-error;
+    color: $text-invers;
+
+    &::before {
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 10px 10px;
+      border-color: transparent transparent $form-error;
+    }
+  }
+}

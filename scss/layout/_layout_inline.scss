@@ -1,0 +1,96 @@
+// Basic layout - structure
+.layout--container,
+.layout--container__top {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.layout--container__top {
+  background-color: $header-bg;
+}
+
+// Top part
+.layout--top {
+  position: relative;
+  max-width: $page-width;
+  margin: 0 auto;
+  z-index: $inline-with-content;
+
+  > header {
+    position: relative;
+  }
+}
+
+.layout--top__main {
+  position: relative;
+  z-index: $above-content;
+  clear: both;
+  font-family: $navigation-font;
+
+  .js & {
+    display: none;
+  }
+}
+
+// Content main base
+.content--style_sidebar,
+.content--style_normal,
+.content--style_wide-inner,
+.layout--featured,
+.layout-block--page-title-block {
+  position: relative;
+  max-width: $page-width;
+  margin: 0 auto;
+}
+
+@include mq($until: tablet) {
+  .layout--top__main {
+    background-color: $subsite-bg;
+    padding: 0 0 $padding-small;
+    font-size: em(16, $fontsize-mobile);
+    line-height: em(20, 16);
+  }
+
+  // Header
+  .layout--top {
+    > header {
+      display: block;
+      padding: $padding-small $padding-alot;
+      text-align: center;
+    }
+  }
+}
+
+// Mainly for the cases between table and desktop view to avoid cramed elements
+@include mq($from: tablet, $until: desktop) {
+	// Header
+  .layout--top,
+  .tab--subsite,
+  .content--style_sidebar .content--main {
+  	padding-left: $padding-small;
+  }
+
+  .nav--service-menu {
+  	padding-right: $padding-small;
+  }
+}
+
+@include mq($from: tablet) {
+  .layout--top__main {
+    background-color: $subsite-bg;
+  }
+
+  // Header
+  .layout--top {
+    > header {
+      display: inline-block;
+      padding: $padding-standard - 4px 0;
+      margin: 2px 0;
+    }
+  }
+
+  .layout--content_main_wsidebar {
+    margin: $padding-alot $page-right-gutter;
+  }
+}

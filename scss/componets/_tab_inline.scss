@@ -1,0 +1,67 @@
+// Tabs can have more than one meaning being something from a paper world or
+// something from a pair of 80'ties jeans
+
+.tab--subsite {
+  display: block;
+  background-color: $subsite-bg;
+
+  @include mq($until: tablet) {
+    text-align: center;
+
+    > a {
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    &.tab--subsite_byline {
+      text-align: left;
+
+      > a {
+        margin: 0 $padding-small;
+        width: calc(100% - 110px);
+      }
+    }
+  }
+
+  @include mq($from: tablet) {
+    border-bottom: 1px solid $border-toptab;
+  }
+
+  > a {
+    display: block;
+  }
+}
+
+.tab--subsite_name {
+  max-width: $page-width;
+  overflow: hidden;
+  font-family: $navigation-font;
+  font-weight: bold;
+  color: $text-invers;
+
+  @include mq($until: tablet) {
+    padding: 11px 0;
+    margin: 0;
+    font-size: em(16, $fontsize-mobile);
+    line-height: em(20, 16);
+    > em {
+      font-size: em(14, 16);
+    }
+  }
+
+  @include mq($from: tablet) {
+    padding: 10px 0;
+    margin: 0 auto;
+    font-size: em(30, $fontsize-desktop);
+    line-height: em(30, 30);
+
+    > em {
+      font-size: em(14, 30);
+    }
+  }
+
+  > em {
+    font-weight: normal;
+    font-style: normal;
+  }
+}

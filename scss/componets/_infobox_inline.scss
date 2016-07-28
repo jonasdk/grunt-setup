@@ -1,0 +1,76 @@
+// Crusial infoboxes that needs to be above-the-fold
+.infobox--hero {
+  width: 100%;
+  position: relative;
+}
+
+.infobox--hero_content {
+  padding: $padding-standard;
+  text-align: center;
+
+  .button--action {
+  	padding-top: 0;
+  }
+
+  .content--prose {
+  	> h2 {
+  		margin: 0;
+  		padding: 0;
+  	}
+
+    strong {
+      color: $text-memberprice;
+    }
+  }
+}
+
+.infobox--bluebox {
+  padding: 2 * $padding-standard;
+  background-image: url('/themes/custom/fdm_subsite/gfx/blue_bg_pattern.png');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-color: $bg-hero-bigbox;
+  color: $text-invers;
+  text-align: center;
+
+  > h1 {
+    margin: 0;
+    line-height: 1.1em;
+    color: inherit;
+  }
+}
+
+@include mq($until: tablet) {
+  .infobox--hero_content {
+    background: $bg-hero-overimage;
+  }
+}
+
+@include mq($from: tablet) {
+  .infobox--hero {
+    max-height: 480px;
+    overflow: hidden;
+  }
+
+  .infobox--hero_overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .infobox--hero_content {
+    float: right;
+    width: $page-sidebar-width;
+    background: $bg-hero-overimgsee;
+    margin-right: 1em;
+    margin-top: 1em;
+  }
+}
+
+@include mq($from: desktop) {
+  .infobox--hero_content {
+    margin-right: 0;
+    margin-top: 2em;
+  }
+}

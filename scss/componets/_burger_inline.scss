@@ -1,0 +1,101 @@
+// The burgermenu aka the main menu toggle only shown on small device screens
+// Like mobile and tablets
+@include mq($until: tablet) {
+  // vars
+  $burger-line-height: 3px;
+  $burger-height: 25px;
+  $burger-line-lenght: 25px;
+  $burger-border-radius: 2px;
+  $burger-buns-spacing: 7px;
+
+  .layout--top__main-toggle {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    -webkit-touch-callout: none;
+    user-select: none;
+    color: $topnav-invers;
+    cursor: pointer;
+
+    &:before {
+      position: absolute;
+      left: -45px;
+      top: 5px;
+      font-size: em(11, 17);
+    }
+
+    // bun animations
+    &.is-open {
+      &:before {
+        content: 'LUK';
+      }
+    }
+
+    &.is-closed {
+      &:before {
+        content: 'MENU';
+      }
+    }
+  }
+
+  // All good burgers need filling!
+  .burger-container {
+    position: relative;
+    height: $burger-height;
+    width: $burger-line-lenght;
+
+		.burger {
+			transition-duration: $animation-speed;
+			transition-timing-function: $animation-style;
+			position: absolute;
+			height: $burger-line-height;
+			width: $burger-line-lenght;
+			top: 16px;
+			background-color: $topnav-invers;
+			border-radius: $burger-border-radius;
+			left: 0;
+
+			&:before{
+				transition-duration: $animation-speed;
+				transition-timing-function: $animation-style;
+				position: absolute;
+				width: $burger-line-lenght;
+				height: $burger-line-height;
+				background-color: $topnav-invers;
+				content: "";
+				top: -1 * $burger-buns-spacing;
+				border-radius: $burger-border-radius;
+			}
+
+			&:after{
+				transition-duration: $animation-speed;
+				transition-timing-function: $animation-style;
+				position: absolute;
+				width: $burger-line-lenght;
+				height: $burger-line-height;
+				background-color: $topnav-invers;
+				content: "";
+				top: $burger-buns-spacing;
+				border-radius: $burger-border-radius;
+			}
+		}
+
+		.is-open & {
+			.burger {
+				transition-duration: $animation-speed;
+				background: transparent;
+
+				&:before{
+					transform: rotateZ(45deg) scaleX(1.25) translate(4px, 4px);
+				}
+
+				&:after{
+					transform: rotateZ(-45deg) scaleX(1.25) translate(5px, -5px);
+				}
+			}
+		}
+  }
+
+
+
+}

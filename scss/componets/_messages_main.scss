@@ -1,0 +1,16 @@
+// Drupal messages need some basic style.
+.layout--content {
+  > .messages {
+    width: $page-width;
+  }
+
+  .messages {
+    margin: 1em auto;
+    padding: $padding-standard;
+  }
+}
+
+.messages--error {
+  background-color: $form-error;
+  color: $text-invers;
+}

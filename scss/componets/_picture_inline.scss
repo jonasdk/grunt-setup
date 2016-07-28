@@ -1,0 +1,27 @@
+// Pictures style base and for the top image rest goes elsewhere
+
+picture {
+  position: relative;
+  display: block;
+
+  > img {
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+// The hero image size have to loade in the main css, since it the collapses the
+// image until the main.css is loaded. Giving a better PageSpeed.
+.picture--field-hero-image {
+  > picture {
+    @include mq($until: tablet) {
+      padding-bottom: 400 / 640 * 100%;
+    }
+
+    @include mq($from: tablet) {
+      padding-bottom: 360 / 1280 * 100%;
+    }
+  }
+}

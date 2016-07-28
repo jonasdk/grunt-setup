@@ -1,0 +1,113 @@
+// Here goes footer specific codes
+.footer--content {
+  position: relative;
+  max-width: $page-width;
+  margin: 0 auto;
+
+  .social--links {
+    background: $icon-invers-bg;
+    color: $social-footer;
+  }
+
+  h3 {
+    font-size: em(17, 14);
+    margin: em(7, 18) 0 em(5, 18);
+  }
+}
+
+.footer--navigation_menu {
+  font-family: $headline-font;
+
+  > li {
+    > a {
+      display: block;
+      margin: em(10, 16) 0 em(20, 16);
+      font-size: em(17, 14);
+    }
+
+    &:last-child {
+      > a {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.footer--social-sender {
+  text-align: right;
+}
+
+.footer--social {
+  margin-bottom: 1em;
+
+  > strong {
+    font-family: $headline-font;
+    font-size: em(17, $fontsize-mobile);
+  }
+}
+
+.footer--bottom {
+  padding: $padding-standard $padding-standard 0;
+  text-align: center;
+
+  p {
+    margin: 0;
+
+    > a {
+      display: inline-block;
+      margin: 0 .5em;
+    }
+  }
+}
+
+// Mobile only
+@include mq($until: tablet) {
+  .footer--content {
+    padding: $padding-alot $padding-standard;
+    line-height: 1.2em;
+
+    h3 {
+      line-height: em(18, 17);
+      margin: em(1, 18) 0 em(1, 18);
+      padding-bottom: em(1, 18);
+    }
+  }
+
+  .footer--navigation_menu {
+    margin-bottom: 3em;
+  }
+
+  .footer--contact-box {
+    padding-bottom: 35px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid $border-footer;
+  }
+
+  .footer--social-sender {
+    text-align: center;
+  }
+
+  .footer--social {
+    > strong {
+      display: block;
+      padding: 1em 0 0.5em;
+    }
+  }
+
+  .footer--bottom {
+    font-size: em(16, $fontsize-mobile);
+    line-height: em(22, 20);
+
+    p {
+      > a {
+        margin: .5em;
+      }
+    }
+  }
+}
+
+@include mq($from: tablet) {
+  .footer--bottom {
+    font-size: em(14, $fontsize-mobile);
+  }
+}

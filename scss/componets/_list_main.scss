@@ -1,0 +1,255 @@
+// List and stuff
+.list {
+  @include clean-list;
+}
+
+.list--checkmarks {
+  line-height: em(30, 20);
+  margin-bottom: em(50, 30);
+
+  @include mq($from: tablet) {
+    column-count: 2;
+    column-gap: 10px;
+	}
+
+  > li {
+    @include icon-before('\e809');
+
+    @include mq($until: tablet) {
+      margin: 0 0 5px;
+    }
+
+    @include mq($from: tablet) {
+      margin: 0 0 20px;
+    }
+  }
+}
+
+// A list of features highlighting each selling point i big writings
+.list--feature {
+  font-family: $headline-font;
+  font-size: em(22, $fontsize-desktop);
+  line-height: em(30, 22);
+
+  > li {
+    display: block;
+    margin-bottom: em(20, 22);
+
+    > span {
+      font-family: $headlinelight-font;
+      font-size: em(30, 22);
+
+      @include mq($from: mobile) {
+        float: right;
+      }
+
+      @include mq($until: mobile) {
+        display: block;
+      }
+    }
+  }
+}
+
+.list--feature_small {
+  > li {
+    display: block;
+    margin-bottom: em(5, $fontsize-desktop);
+
+    @include mq($from: mobile) {
+      > span {
+        float: right;
+      }
+    }
+
+    @include mq($until: mobile) {
+      font-weight: bold;
+
+      > span {
+        display: block;
+        font-weight: normal;
+      }
+    }
+  }
+}
+
+// Content standard unorder and order lists
+.content--prose {
+  ul,
+  ol {
+    > li {
+      display: block;
+      padding-bottom: $padding-small;
+      color: inherit;
+
+      &::before {
+        display: inline-block;
+      }
+    }
+  }
+
+  ol {
+    counter-reset: item;
+
+    > li {
+      text-indent: -2em;
+
+      &::before {
+        min-width: 2em;
+        padding-right: em(12, 18);
+        content: counter(item) '.';
+        counter-increment: item;
+        text-align: right;
+        font-weight: bold;
+        color: $text-listend;
+      }
+    }
+  }
+
+  ul {
+    > li {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        left: -20px;
+        top: 0;
+        content: '•';
+        font-size: em(40, 18);
+        line-height: .65em;
+        color: $text-listend;
+      }
+    }
+  }
+}
+
+// Accordion
+.list--accordion {
+  .header--accordion {
+    position: relative;
+    cursor: pointer;
+    margin: 0;
+    font-family: inherit;
+    font-size: em(18, 18);
+    line-height: em(22, 18);
+    color: inherit;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $bg-accord-active;
+    }
+
+    &::before {
+      position: absolute;
+      left: 20px;
+      content: '+';
+      font-family: $headline-empasis-font;
+      font-size: 48px;
+      line-height: 30px;
+      color: $icons-accordion;
+    }
+  }
+}
+
+.list--accordion_item {
+  background-color: $bg-accord;
+  border-bottom: 1px solid $border-accordion;
+
+  &.accordion-active {
+    background-color: $bg-accord-open;
+    color: $text-invers;
+    transition: background-color $animation-speed $animation-style;
+    border-color: $bg-accord-open;
+
+    .header--accordion {
+      font-weight: bold;
+      color: inherit;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: inherit;
+      }
+
+      &::before {
+        content: '–';
+        font-size: 40px;
+        color: inherit;
+      }
+    }
+  }
+}
+
+.list--accordion__content {
+  .field--body {
+    padding: 0 $padding-small $padding-small $padding-small * 4;
+  }
+}
+
+.form--grey-box {
+  .header--accordion {
+    font-family: $headline-font;
+    font-size: em(30, 18);
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      position: absolute;
+      right: 0;
+      content: '+';
+      font-family: $headlinelight-font;
+      font-size: 48px;
+      line-height: 30px;
+      color: $icons-accordion;
+    }
+  }
+
+  .accordion-active .header--accordion::after {
+    content: '-';
+    font-size: 60px;
+  }
+}
+
+@include mq($until: tablet) {
+  .header--accordion {
+    padding: $padding-small $padding-small $padding-small $padding-small * 4;
+
+    .form--grey-box & {
+      padding-left: 0;
+    }
+
+    &::before {
+      top: $padding-small;
+    }
+  }
+
+  .content--prose {
+    ul,
+    ol {
+      padding-left: 20px;
+    }
+  }
+}
+
+@include mq($from: tablet) {
+  .header--accordion {
+    padding: $padding-alot $padding-small $padding-alot $padding-small * 4;
+
+    .form--grey-box & {
+      padding-left: 0;
+    }
+
+    &::before {
+      top: $padding-alot;
+    }
+  }
+
+  .content--prose {
+    ul,
+    ol {
+      padding-left: 60px;
+    }
+  }
+}

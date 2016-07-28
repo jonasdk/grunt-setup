@@ -1,0 +1,53 @@
+// Here goes footer specific codes
+@include mq($from: tablet) {
+  .footer--content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 55px 1em;
+    font-size: em(14, $fontsize-desktop);
+    line-height: em(20, 14);
+  }
+
+  .footer--column {
+    width: 25%;
+    flex-grow: 1;
+  }
+
+  .footer--contact-box {
+    max-width: 157px;
+    margin-right: 49 / 1000 * 100%;
+    border-right: 1px solid $border-footer;
+  }
+
+  .footer--navigation_menu {
+    > li {
+      > a {
+        padding: 0 0 em(16, 16);
+      }
+    }
+  }
+
+  .footer--social-sender {
+    flex-grow: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}
+
+@include mq($from: desktop) {
+  .footer--content {
+    padding: 55px 0;
+  }
+
+  .footer--column {
+    width: 180 / 1000 * 100%;
+  }
+
+  .footer--contact-box {
+    width: 280 / 1000 * 100%;
+  }
+}

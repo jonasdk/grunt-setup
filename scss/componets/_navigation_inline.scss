@@ -1,0 +1,151 @@
+// Just the navigation that goes above-the-fold
+
+.menu {
+  @include clean-list;
+  font-family: $navigation-font;
+
+  a {
+    &.is-active,
+    &:hover,
+    &:active,
+    &:focus {
+      color: $link-active;
+    }
+  }
+}
+
+.navigation--top {
+  max-width: $page-width;
+  margin: 0 auto;
+}
+
+// Specific menus
+@include mq($until: tablet) {
+  .nav--main,
+  .nav--service-menu {
+    .menu {
+      > li {
+        > a {
+          display: block;
+          padding: 6px 10px 6px 25px;
+          color: $topnav-invers;
+
+          &.is-active,
+          &:hover,
+          &:active,
+          &:focus {
+            background-color: $topnav-bg-hover;
+            color: $topnav-invers-hover;
+          }
+        }
+      }
+    }
+  }
+
+  .nav--main {
+    .menu {
+      border-top: 1px solid $border-toptab;
+
+      > li {
+        border-bottom: 1px solid $border-toptab;
+      }
+    }
+  }
+
+  .nav--service-menu {
+    padding-top: 17px;
+  }
+}
+
+@include mq($from: tablet) {
+  .nav--main {
+    padding: 0;
+    font-size: em(17, $fontsize-desktop);
+    line-height: em(28, 16);
+    color: $topnav-invers;
+
+    .menu {
+      // This is to make sure the whitespace is removed between the li's
+      // tested and works in >= IE9
+      display: flex;
+      white-space: nowrap;
+
+      > li {
+        display: inline-block;
+        border-left: 1px solid $border-toptab;
+        margin: 0;
+
+        > a {
+          display: inline-block;
+          padding: 6px 10px;
+          color: $topnav-invers;
+
+          &.is-active,
+          &:hover,
+          &:active,
+          &:focus {
+            background-color: $topnav-bg-hover;
+            color: $topnav-invers-hover;
+          }
+        }
+
+        &:last-of-type {
+          border-right: 1px solid $border-toptab;
+        }
+      }
+    }
+  }
+
+  .nav--service-menu {
+    position: absolute;
+    top: -99px;
+    left: auto;
+    z-index: 5;
+    width: 100%;
+    font-size: em(17, $fontsize-desktop);
+
+    .menu {
+      height: 0;
+      max-width: $page-width;
+      margin: 0 auto;
+      text-align: right;
+
+      > li {
+        display: inline-block;
+
+        > a {
+          display: inline-block;
+          margin-left: em(25, 16);
+        }
+      }
+    }
+  }
+}
+
+.menu--service_70-13-30-40,
+.menu--service_kundeservice,
+.menu--service_login {
+  > a {
+    @include icon-before('\e811');
+
+    &:before {
+      margin-right: em(7, 16);
+    }
+  }
+}
+
+.menu--service_kundeservice {
+  > a {
+    &:before {
+      content: ('\e80f');
+    }
+  }
+}
+
+.menu--service_login {
+  > a {
+    &:before {
+      content: ('\e810');
+    }
+  }
+}

@@ -1,0 +1,192 @@
+// Tables both in views and content
+
+// Table used for comparing data sets
+.table--comparison {
+  width: 100%;
+
+  td {
+    padding: $padding-small 0;
+    vertical-align: middle;
+  }
+
+  tbody {
+    > tr {
+      border-bottom: 2px solid $table-border;
+    }
+  }
+
+  .td--header_top {
+    text-align: center;
+  }
+
+  .td--header_left {
+    font-size: em(12, 17);
+  }
+
+  .td--number {
+    border-left: 1px solid $table-border;
+    padding-left: $padding-tiny;
+    padding-right: $padding-tiny;
+
+    @include mq($from: mobile) {
+      font-size: 1em;
+    }
+
+    @include mq($until: mobile) {
+      font-size: em(13, 16);
+    }
+  }
+}
+
+.td--number_centered {
+  text-align: center;
+  font-weight: bold;
+}
+
+// prose table more to come her
+.content--prose {
+  table {
+    width: 100%;
+  }
+
+  td,
+  th {
+    vertical-align: top;
+    padding: 0.8em 0.3em;
+  }
+}
+
+// This is the view table that we sort of have control over
+.content--display_view {
+  table {
+    width: 100%;
+    margin-top: $padding-alot;
+    margin-bottom: $padding-pagebottom;
+  }
+
+  td,
+  th {
+    vertical-align: middle;
+    text-align: left;
+  }
+
+  td {
+    background: $table-cell-bg;
+
+    > p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+@include mq($from: tablet) {
+  .content--display_view {
+    td,
+    th {
+      text-align: left;
+    }
+
+    td {
+      padding: em(18, 17) em(5, 17);
+      border-color: $table-border;
+      border-style: solid;
+      border-width: 1px 0;
+
+      &:first-of-type {
+        padding-left: em(30, 17);
+      }
+
+      &:last-of-type {
+        padding-right: em(30, 17);
+        text-align: right;
+      }
+    }
+
+    th {
+      background: $table-header-bg;
+      padding: em(30, 17) em(6, 17);
+      color: $text-invers;
+
+      &:first-of-type {
+        padding-left: em(30, 17);
+      }
+
+      &:last-of-type {
+        padding-right: em(30, 17);
+      }
+    }
+
+    tbody {
+    	> tr {
+    		&:last-of-type {
+    			> td {
+    				border-width: 0;
+    			}
+    		}
+    	}
+    }
+
+    thead {
+      > tr {
+        > th {
+          background: $table-header-bg;
+          border-color: $table-header-bg;
+          border-style: solid;
+          border-width: 1px;
+          color: $text-invers;
+        }
+      }
+    }
+  }
+}
+
+@include mq($until: tablet) {
+  .table--mobile {
+    background: $table-cell-bg;
+
+    td,
+    th {
+      background: transparent;
+      border: 0;
+      text-align: center;
+    }
+
+    td {
+      &.table--column-field-product-name,
+      &.table--column-title {
+        padding: 1em 0;
+        background: $table-cell-bg;
+        border-color: $table-border;
+        border-style: solid;
+        border-width: 1px 0;
+        color: $text-invers;
+      }
+    }
+
+    th {
+      &.table--column-field-product-name,
+      &.table--column-title {
+        display: none;
+      }
+    }
+
+    .table--column-field-cta-link {
+      padding: 1em 0 2em;
+    }
+  }
+
+  .table--mobile_header {
+    > th {
+      background: inherit;
+      color: inherit;
+      padding-top: 1em;
+    }
+  }
+}
+
+.table--cols-3 {
+  td {
+    width: 1 / 3 * 100%;
+  }
+}

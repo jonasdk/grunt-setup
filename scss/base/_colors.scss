@@ -1,0 +1,148 @@
+// Greys and black
+$black-color:       #000;
+$black-transp:      rgba(25, 41, 51, 0.9);
+$black-soft:        #222;
+$grey-dust:         #303030;
+$grey-dark:         #444;
+$grey-betonite:     #4b595f;
+$grey-medium:       #666;
+$grey-shadow:       #999;
+$grey-light:        #ccc;
+$grey-silver:       #b7c3c7;
+$grey-lighter:      #ddd;
+$grey-cholk:        #dee6ed;
+$grey-cholk-transp: rgba(222, 230, 237, 0.9);
+$near-white:        #eee;
+$white-color:       #fff;
+
+// status colors
+$yellow-marker:       #ff0;
+$yellow-action:       #ffb300;
+$red-action:          #d00404;
+$red-error:           #f43300;
+$green-success:       #00ae4c;
+$orange-offer:        #ff6c00;
+
+// FDM Branded colors
+$blue-logo:           #004f83;
+$blue-new:            #05699a;
+$blue-newdark:        #003c6d;
+$blue-newlight:       #33a0d3;
+$blue-vivid:          #001e36;
+$blue-dark:           #294555;
+$blue-text:           #00709b;
+$blue-turquios-light: #87cce5;
+$blue-turquios:       #279cc9;
+$blue-turquios-dark:  #39779b;
+$blue-light-sevenstar:#baeafc;
+$blue-sky:            #e9f0f3;
+$bilsyn:              $blue-turquios;
+
+// Social colors
+$social-facebook:     #3b5998;
+$social-twitter:      #4099ff;
+$social-linkedin:     #0077b5;
+$social-instagram:     #8a3ab9;
+
+// ************
+// Below this point only font names should be used and thoose names should be
+// be the only thing used in the other files. This makes it posible to change
+// names of colors or delete colors without messing with other stylesheets.
+// ************
+
+// Text colors
+$text-color:        $black-soft;
+$text-header:       $black-soft;
+$text-header2:      $black-soft;
+$text-invers:				$white-color;
+$text-dark:         $black-color;
+$text-sosumi:       $grey-medium;
+$text-grey:         $grey-shadow;
+$text-form:         $grey-betonite;
+$text-memberprice:  $orange-offer;
+$text-caption:      $black-soft;
+$text-list:         $text-color;
+$text-listend:      $orange-offer;
+$text-highquote:    $orange-offer;
+$social-footer:     $blue-newdark;
+
+// Text Selection
+$selection-color:   $grey-light;
+
+// Navigation
+$topnav:              $white-color;
+$topnav-bg:           $blue-dark;
+$topnav-bg-hover:     $blue-turquios-dark;
+$topnav-service:      $blue-dark;
+$topnav-arrow:        $blue-turquios;
+$topnav-invers:       $text-invers;
+$topnav-invers-hover: $text-invers;
+$subsite-bg:          $bilsyn;
+
+// Shadows
+$shadow:            $grey-medium;
+$text-shadow:       $grey-shadow;
+
+// Content
+$grey-icons:        $grey-medium;
+$cta-action-red:    $red-action;
+$icons-accordion:   $blue-turquios;
+
+// Backgrounds
+$content-bg-color:  $white-color;
+$bg-contentmain:    $white-color;
+$header-bg:         $white-color;
+$footer-bg:         $blue-newdark;
+$mark-bg:           $yellow-marker;
+$splash-bg:         $orange-offer;
+$streamer-bg:       $yellow-action;
+$fordele-bg:        $blue-sky;
+$accordion-bg:			$blue-vivid;
+$bg-accord:         $white-color;
+$bg-accord-active:  $blue-sky;
+$bg-accord-open:    $grey-betonite;
+$cookie-bg:         $black-transp;
+$icon-invers-bg:    $white-color;
+$bg-infobox:        $grey-cholk;
+$bg-hero-bigbox:    $blue-logo;
+$bg-hero-overimage: $grey-cholk;
+$bg-hero-overimgsee:$grey-cholk-transp;
+$bg-infobox-grey:   $blue-sky;
+$bg-infobox-meta:   $blue-turquios;
+$bg-infobox-attention: $orange-offer;
+
+// Borders
+$border-form:       $grey-light;
+$border-menu:       $black-color;
+$border-menu-dark:  $grey-silver;
+$border-sidebar:    $grey-lighter;
+$border-footer:     $blue-turquios-dark;
+$border-accordion:  $grey-betonite;
+$border-toptab:     $blue-turquios-light;
+
+// Tables
+$table-header-bg:   $blue-newdark;
+$table-cell-bg:     $grey-cholk;
+$table-border:      $grey-silver;
+
+// Links
+$link-color:        $blue-turquios;
+$link-active:       $blue-turquios;
+$link-hover-color:  $blue-turquios;
+$link-hover-black:  $black-soft;
+$link-prose:        $blue-turquios;
+
+// Form elements
+$form-back:         $white-color;
+$form-back-active:  $grey-silver;
+$form-inactive:     $grey-cholk;
+$form-stroke:       $grey-lighter;
+$form-required:     $orange-offer;
+$form-highlight:    $blue-new;
+$form-error:        $red-error;
+$button-std:        $blue-logo;
+$button-success:    $green-success;
+
+// Progress
+$progress-bg:         $white-color;
+$progress-bg-active:  $blue-newlight;

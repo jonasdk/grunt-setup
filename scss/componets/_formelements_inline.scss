@@ -1,0 +1,28 @@
+// Form elements for the inline goes in here
+
+.button {
+  display: inline-block;
+  background: $button-success;
+  border-radius: 3px;
+  padding: em(9, 20) em(20, 20);
+  margin-bottom: em(10, 20);
+  border: 0;
+  text-align: center;
+  font-weight: bold;
+  color: $text-invers;
+  opacity: 1;
+
+  td & {
+    white-space: nowrap;
+    padding: em(6, $fontsize-desktop) em(20, $fontsize-desktop);
+    margin-bottom: 0;
+  }
+}
+
+.button--success {
+  background: $button-success;
+}
+
+.button--action {
+  padding: em(10, 20) 0 0;
+}

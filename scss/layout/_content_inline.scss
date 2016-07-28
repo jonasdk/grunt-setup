@@ -1,0 +1,74 @@
+// This is for the content part that usually comes from the drupal node
+// This is only for the layout related parts not for special part within
+// this pages
+
+.section--content {
+  .views-element-container {
+    max-width: $page-textreader-width + $page-right-gutter;
+  }
+}
+
+.section--content-bottom {
+  .content--display_view {
+    max-width: $page-width;
+    margin: 0 auto;
+  }
+}
+
+.content--type_hero {
+  position: relative;
+}
+
+@include mq($until: tablet) {
+  .content--main {
+    .content--style_sidebar & {
+      padding: $padding-standard;
+    }
+
+    .list--accordion & {
+      padding: $padding-standard 0;
+    }
+  }
+
+  .content--meta {
+    border: 1px solid $border-sidebar;
+    margin: 0;
+    padding: $padding-small;
+  }
+}
+
+@include mq($from: tablet) {
+  .content--style_sidebar {
+    overflow: hidden;
+
+    .content--main {
+      float: left;
+      width: $page-textreader-width / $page-width * 100%;
+      max-width: $page-textreader-width;
+      padding-top: 50px;
+      padding-bottom: $padding-standard;
+    }
+
+    .content--sidebar {
+      float: left;
+      width: $page-sidebar-width / $page-width * 100%;
+      max-width: $page-sidebar-width;
+      margin-left: $page-right-gutter / $page-width * 100%;
+      margin-top: 60px;
+    }
+  }
+
+  .layout--sporgsmal-og-svar-om-syn-faq-list2 {
+    overflow: hidden;
+    max-width: $page-width;
+    margin: 0 auto;
+
+    .content--style-sidebar {
+      float: left;
+      width: $page-textreader-width / $page-width * 100%;
+      max-width: $page-textreader-width;
+      padding-top: 0;
+      padding-bottom: $padding-standard;
+    }
+  }
+}

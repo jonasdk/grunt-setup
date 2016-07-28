@@ -1,0 +1,27 @@
+// Theme Name: FDM Vejhjælp
+// Theme URI: http://vejhjaelp.fdm.dk
+// Description: FDM theme developed in 2015
+// Author: Jonas Krat, FDM
+// Author URI: http://www.fdm.dk
+// Version: 1.0
+
+// Main is what is below-the-fold on a bigger device
+
+// Reset, Variables, Mixins, Etc
+// DO NOT EDIT ORDER OF FILES
+@import 'base/mixins';
+@import 'base/mq';
+@import 'base/colors';
+@import 'base/variables';
+
+// Globals
+
+// The layout
+@import 'layout/layout_screen';
+@import 'layout/page_screen';
+@import 'layout/footer_screen';
+
+// Site Styles
+@import 'componets/picture_screen';
+
+// Helper Classes, Print, Etc
